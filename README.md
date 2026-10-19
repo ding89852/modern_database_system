@@ -12,3 +12,5 @@ npm test
 /survey-app/docs/第一阶段设计.md
 ## 测试说明路径:
 /survey-app/docs/测试用例.md
+## 项目报告
+report.pdf

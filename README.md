@@ -9,6 +9,6 @@ stop_survey.bat
 cd /survey-app
 npm test
 ## 文档路径:
-/survey-app/docs/readme.md
+/survey-app/docs/第一阶段设计.md
 ## 测试说明路径:
-/survey-app/docs/
+/survey-app/docs/测试用例.md

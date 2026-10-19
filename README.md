@@ -8,3 +8,7 @@ stop_survey.bat
 ## 测试方法:
 cd /survey-app
 npm test
+## 文档路径:
+/survey-app/docs/readme.md
+## 测试说明路径:
+/survey-app/docs/

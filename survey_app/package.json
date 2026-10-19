@@ -1,0 +1,30 @@
+{
+  "name": "mongodb-survey-app",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "简化版在线问卷系统，MongoDB + Express",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "init-db": "node scripts/init-db.js",
+    "test": "node --test",
+    "smoke": "node scripts/browser-smoke.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.12.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^25.14.0",
+    "supertest": "^7.0.0"
+  }
+}

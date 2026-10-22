@@ -14,3 +14,5 @@ npm test
 /survey-app/docs/测试用例.md
 ## 项目报告
 report.pdf
+## AI对话日志
+对话日志.md

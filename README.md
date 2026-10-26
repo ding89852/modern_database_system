@@ -8,11 +8,5 @@ stop_survey.bat
 ## 测试方法:
 cd /survey-app <br>
 npm test
-## 文档路径:
-/survey-app/docs/第一阶段设计.md
-## 测试说明路径:
-/survey-app/docs/测试用例.md
-## 项目报告
-report.pdf
 ## AI对话日志
 二阶段对话总结.md

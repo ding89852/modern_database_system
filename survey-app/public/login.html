@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>登录 - MongoDB 问卷系统</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container narrow">
+      <header>
+        <h1>登录</h1>
+        <p>登录后创建、发布问卷或填写问卷</p>
+      </header>
+
+      <section class="card">
+        <form id="loginForm">
+          <div class="field">
+            <label for="username">用户名</label>
+            <input
+              id="username"
+              name="username"
+              autocomplete="username"
+              minlength="3"
+              maxlength="32"
+              autofocus
+            />
+            <div id="lastUserHint" class="recent-users"></div>
+          </div>
+          <div class="field">
+            <label for="password">密码</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              minlength="1"
+            />
+          </div>
+          <button type="submit">登录</button>
+        </form>
+        <p id="message" class="error"></p>
+        <p class="hint">还没有账号？<a href="/register">去注册</a></p>
+      </section>
+    </div>
+
+    <script type="module" src="/login.js"></script>
+  </body>
+</html>

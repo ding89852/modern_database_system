@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>问卷结果 - MongoDB 问卷系统</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="row space-between">
+          <div>
+            <h1 id="surveyTitle">问卷结果</h1>
+            <p id="surveyDescription"></p>
+            <p id="surveyMeta" class="hint"></p>
+          </div>
+          <a href="/" class="button-like">返回首页</a>
+        </div>
+      </header>
+
+      <section id="messagePanel" class="card hidden">
+        <p id="pageMessage" class="error"></p>
+      </section>
+
+      <section id="resultContent" class="hidden">
+        <section class="card">
+          <div class="stats-grid">
+            <div>
+              <div id="totalResponses" class="stat-value">0</div>
+              <div class="hint">答卷数</div>
+            </div>
+            <div>
+              <div id="questionCount" class="stat-value">0</div>
+              <div class="hint">题目数</div>
+            </div>
+            <div>
+              <div id="surveyStatus" class="stat-value">-</div>
+              <div class="hint">状态</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="row space-between">
+            <h2>作答用户</h2>
+            <span id="respondentCount" class="hint"></span>
+          </div>
+          <div id="respondentList"></div>
+        </section>
+
+        <div class="tabs">
+          <button class="tab active" data-tab="stats" type="button">统计结果</button>
+          <button class="tab" data-tab="responses" type="button">作答明细</button>
+        </div>
+
+        <section id="statsPanel" class="card">
+          <div id="statsList"></div>
+        </section>
+
+        <section id="responsesPanel" class="card hidden">
+          <div id="responseList"></div>
+        </section>
+      </section>
+    </div>
+
+    <script type="module" src="/results.js"></script>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>题库 - MongoDB 问卷系统</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="row space-between">
+          <div>
+            <h1>题库</h1>
+            <p>保存、复用、共享题目，并查看版本与跨问卷统计</p>
+          </div>
+          <a href="/" class="button-like">返回首页</a>
+        </div>
+      </header>
+
+      <section class="card">
+        <div class="row space-between">
+          <h2 id="editorTitle">新建题目</h2>
+          <button id="resetFormBtn" class="secondary" type="button">清空</button>
+        </div>
+        <form id="questionForm">
+          <div class="grid-2">
+            <div class="field">
+              <label>题型</label>
+              <select id="typeInput">
+                <option value="single">单选</option>
+                <option value="multiple">多选</option>
+                <option value="text">文本填空</option>
+                <option value="number">数字填空</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>题干</label>
+              <input id="titleInput" maxlength="500" placeholder="请输入题干" />
+            </div>
+          </div>
+          <label class="checkbox-line">
+            <input id="requiredInput" type="checkbox" />
+            默认必答
+          </label>
+
+          <div id="optionsGroup" class="builder-section">
+            <div class="field">
+              <label>选项（一行一个）</label>
+              <textarea id="optionsInput" placeholder="选项 1&#10;选项 2"></textarea>
+            </div>
+          </div>
+
+          <div id="multipleValidation" class="builder-section grid-2 hidden">
+            <div class="field">
+              <label>最少选择个数</label>
+              <input id="minSelectionsInput" type="number" min="0" placeholder="不限" />
+            </div>
+            <div class="field">
+              <label>最多选择个数</label>
+              <input id="maxSelectionsInput" type="number" min="0" placeholder="不限" />
+            </div>
+          </div>
+
+          <div id="textValidation" class="builder-section grid-2 hidden">
+            <div class="field">
+              <label>最少字符数</label>
+              <input id="minLengthInput" type="number" min="0" placeholder="不限" />
+            </div>
+            <div class="field">
+              <label>最多字符数</label>
+              <input id="maxLengthInput" type="number" min="0" placeholder="不限" />
+            </div>
+          </div>
+
+          <div id="numberValidation" class="builder-section hidden">
+            <div class="grid-2">
+              <div class="field">
+                <label>最小值</label>
+                <input id="minInput" type="number" placeholder="不限" />
+              </div>
+              <div class="field">
+                <label>最大值</label>
+                <input id="maxInput" type="number" placeholder="不限" />
+              </div>
+            </div>
+            <div class="field">
+              <label>数字类型</label>
+              <select id="numberModeInput">
+                <option value="decimal">小数（允许整数和小数）</option>
+                <option value="integer">整数（只能填写整数）</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>版本说明（可选）</label>
+            <input id="changeNoteInput" maxlength="500" placeholder="例如：调整选项文案" />
+          </div>
+          <label class="checkbox-line">
+            <input id="createShareInput" type="checkbox" />
+            创建后生成共享链接
+          </label>
+          <button id="saveQuestionBtn" type="submit">保存题目</button>
+        </form>
+        <p id="message" class="error"></p>
+      </section>
+
+      <section class="card">
+        <div class="row space-between">
+          <h2>题目库</h2>
+          <div class="row">
+            <input id="searchInput" placeholder="搜索题干" style="width: 180px" />
+            <select id="typeFilter">
+              <option value="">全部题型</option>
+              <option value="single">单选</option>
+              <option value="multiple">多选</option>
+              <option value="text">文本</option>
+              <option value="number">数字</option>
+            </select>
+            <button id="refreshBtn" class="secondary" type="button">刷新</button>
+          </div>
+        </div>
+        <div id="bankList"></div>
+        <div id="bankDetail" class="bank-detail hidden"></div>
+      </section>
+    </div>
+    <script type="module" src="/question-bank.js"></script>
+  </body>
+</html>

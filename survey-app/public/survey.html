@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>填写问卷</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container narrow">
+      <header>
+        <h1 id="surveyTitle">填写问卷</h1>
+        <p id="surveyDescription"></p>
+        <p id="surveyMeta" class="hint"></p>
+      </header>
+
+      <section id="loginPanel" class="card hidden">
+        <h2>请先登录</h2>
+        <form id="fillLoginForm">
+          <div class="field">
+            <label for="fillUsername">用户名</label>
+            <input id="fillUsername" autocomplete="username" />
+            <div id="lastUserHint" class="recent-users"></div>
+          </div>
+          <div class="field">
+            <label for="fillPassword">密码</label>
+            <input id="fillPassword" type="password" autocomplete="current-password" />
+          </div>
+          <button type="submit">登录并继续</button>
+        </form>
+        <p class="hint">没有账号？<a href="/register">去注册</a></p>
+        <p id="loginMessage" class="error"></p>
+      </section>
+
+      <section id="messagePanel" class="card hidden">
+        <p id="pageMessage"></p>
+        <a href="/">返回首页</a>
+      </section>
+
+      <form id="surveyForm" class="hidden">
+        <div id="questionList"></div>
+        <div class="submit-bar">
+          <button id="submitBtn" type="submit">提交问卷</button>
+        </div>
+        <p id="submitMessage" class="error"></p>
+      </form>
+    </div>
+
+    <script type="module" src="/fill.js"></script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>我的答卷 - MongoDB 问卷系统</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container narrow">
+      <header>
+        <div class="row space-between">
+          <div>
+            <h1 id="surveyTitle">我的答卷</h1>
+            <p id="surveyDescription"></p>
+            <p id="surveyMeta" class="hint"></p>
+          </div>
+          <a href="/" class="button-like">返回首页</a>
+        </div>
+      </header>
+
+      <section id="messagePanel" class="card hidden">
+        <p id="pageMessage"></p>
+      </section>
+
+      <section id="responsePanel" class="hidden">
+        <div id="responseList"></div>
+      </section>
+    </div>
+
+    <script type="module" src="/response.js"></script>
+  </body>
+</html>

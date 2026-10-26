@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>创建问卷 - MongoDB 问卷系统</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="row space-between">
+          <div>
+            <h1 id="pageTitle">创建问卷</h1>
+            <p>填写问卷信息，添加题目并配置跳转规则</p>
+          </div>
+          <a href="/" class="button-like">返回首页</a>
+        </div>
+      </header>
+
+      <section id="noticePanel" class="card hidden">
+        <p id="noticeMessage" class="error"></p>
+      </section>
+
+      <section class="card">
+        <h2>问卷信息</h2>
+        <div class="field">
+          <label for="surveyTitleInput">问卷标题</label>
+          <input id="surveyTitleInput" maxlength="200" placeholder="例如：课程反馈问卷" />
+        </div>
+        <div class="field">
+          <label for="surveyDescriptionInput">问卷说明</label>
+          <textarea id="surveyDescriptionInput" maxlength="2000" placeholder="可选"></textarea>
+        </div>
+        <div class="row" style="margin-bottom: 14px">
+          <label class="checkbox-line">
+            <input id="allowAnonymousInput" type="checkbox" />
+            匿名填写（创建者看不到填写者身份）
+          </label>
+          <label class="checkbox-line">
+            <input id="allowMultipleResponsesInput" type="checkbox" />
+            允许重复填写
+          </label>
+        </div>
+        <div class="field">
+          <label for="deadlineInput">截止时间（可选）</label>
+          <input id="deadlineInput" type="datetime-local" />
+          <p class="hint">截止时间必须晚于当前时间。</p>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="row space-between">
+          <h2>题目</h2>
+          <div class="row">
+            <button id="addFromBankBtn" class="secondary" type="button">题库 / 共享链接</button>
+            <button id="addQuestionBtn" type="button">添加题目</button>
+          </div>
+        </div>
+        <div id="questionList"></div>
+      </section>
+
+      <section id="bankPanel" class="card hidden">
+        <div class="row space-between">
+          <h2>添加已有题目</h2>
+          <button id="closeBankBtn" class="secondary" type="button">关闭</button>
+        </div>
+        <p class="hint">可以从自己的题库选择，或粘贴其他用户生成的共享题目链接。</p>
+        <div class="row" style="margin-bottom: 14px">
+          <input
+            id="sharedLinkInput"
+            placeholder="粘贴共享题目链接"
+            style="flex: 1; min-width: 220px"
+          />
+          <button id="importSharedBtn" class="secondary" type="button">导入链接中的题目</button>
+        </div>
+        <div id="bankPickerList"></div>
+      </section>
+
+      <section class="card">
+        <div class="row">
+          <button id="saveDraftBtn" class="secondary" type="button">保存草稿</button>
+          <button id="savePublishBtn" type="button">保存并发布</button>
+        </div>
+        <p id="message" class="error"></p>
+      </section>
+    </div>
+
+    <script type="module" src="/create.js"></script>
+  </body>
+</html>

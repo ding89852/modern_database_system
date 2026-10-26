@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>共享题目 - MongoDB 问卷系统</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container narrow">
+      <header>
+        <div class="row space-between">
+          <div>
+            <h1 id="pageTitle">共享题目</h1>
+            <p class="hint">把此链接粘贴到问卷编辑器的“题库 / 共享链接”中即可导入。</p>
+          </div>
+          <a href="/" class="button-like">返回首页</a>
+        </div>
+      </header>
+
+      <section id="messagePanel" class="card hidden">
+        <p id="pageMessage"></p>
+      </section>
+
+      <section id="questionPanel" class="card hidden">
+        <h2 id="questionTitle"></h2>
+        <p id="questionMeta" class="hint"></p>
+        <div id="questionContent"></div>
+        <div class="field">
+          <label>共享链接</label>
+          <input id="shareUrl" readonly />
+        </div>
+        <button id="copyLinkBtn" class="secondary" type="button">复制链接</button>
+        <p id="copyMessage" class="hint"></p>
+      </section>
+    </div>
+    <script type="module" src="/shared-question.js"></script>
+  </body>
+</html>

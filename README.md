@@ -15,4 +15,4 @@ npm test
 ## 项目报告
 report.pdf
 ## AI对话日志
-对话日志.md
+二阶段对话总结.md
